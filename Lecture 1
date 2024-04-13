@@ -1,0 +1,76 @@
+class Vehicle:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+    
+    def start(self):
+        print(f"{self.make} {self.model} starting...")
+
+    def stop(self):
+        print(f"{self.make} {self.model} stopping...")
+
+class Motorcycle(Vehicle):
+    def __init__(self, make, model, year, engine_size, is_sports_bike):
+        super().__init__(make, model, year)
+        self.engine_size = engine_size
+        self.is_sports_bike = is_sports_bike
+    
+    def wheelie(self):
+        print(f"{self.make} {self.model} performing a wheelie!")
+
+    def off_road(self):
+        print(f"{self.make} {self.model} going off-road...")
+
+class Bus(Vehicle):
+    def __init__(self, make, model, year, seating_capacity, is_double_decker):
+        super().__init__(make, model, year)
+        self.seating_capacity = seating_capacity
+        self.is_double_decker = is_double_decker
+    
+    def open_doors(self):
+        print(f"{self.make} {self.model} opening doors...")
+
+    def announce_stops(self):
+        print(f"{self.make} {self.model} announcing stops...")
+
+class Trailer(Vehicle):
+    def __init__(self, make, model, year, length, has_ramps):
+        super().__init__(make, model, year)
+        self.length = length
+        self.has_ramps = has_ramps
+    
+    def attach_to_vehicle(self):
+        print(f"{self.make} {self.model} attached to a vehicle...")
+
+    def load_cargo(self):
+        print(f"{self.make} {self.model} loading cargo...")
+
+class Boat(Vehicle):
+    def __init__(self, make, model, year, length, is_motorized):
+        super().__init__(make, model, year)
+        self.length = length
+        self.is_motorized = is_motorized
+    
+    def sail(self):
+        print(f"{self.make} {self.model} sailing...")
+
+    def anchor(self):
+        print(f"{self.make} {self.model} dropping anchor...")
+
+# Example usage
+motorcycle = Motorcycle("Honda", "CBR1000RR", 2022, "1000cc", True)
+motorcycle.start()
+motorcycle.wheelie()
+
+bus = Bus("Mercedes-Benz", "Sprinter", 2020, 20, False)
+bus.start()
+bus.open_doors()
+
+trailer = Trailer("Utility", "Flatbed", 2019, 20, True)
+trailer.start()
+trailer.attach_to_vehicle()
+
+boat = Boat("Boston Whaler", "Montauk", 2018, 20, True)
+boat.start()
+boat.sail()
